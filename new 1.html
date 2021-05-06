@@ -1,0 +1,216 @@
+FRONT.html
+<html>
+	<head><title>welcome to frames</title></head>
+<frameset rows="10%,*">
+    <frame src="head.html" roolbar="no" status="no" />
+    <frameset cols="15%,*">
+       <frame src="leftframe.html"/>
+        <frame src="home.html" name="rightframe"/>
+        </frameset>   
+    </frameset>
+</html>
+
+Head.html
+<html>
+	<head><title>head page</title></head>
+<body bgcolor="gray" ><center>
+    <h1>welcome</h1>
+    </center>
+    </body>
+</html>
+
+Leftframe.html
+<html>
+	<head><title>left frame</title></head>   
+<body bgcolor="yellow">
+    <h1>LIST</h1>
+    <ol type="1">
+       <li><p> <a href="home.html" target="rightframe">HOME page</a></p></li>
+        <li><p><a href="form.html" target="rightframe">E-Mail Form</a></p></li>
+        <li><p><a href="javaquiz.htm" target="rightframe">javaquiz</a></p></li>
+        <li><p><a href="image map.html" target="rightframe">Image map</a></p></li>
+        <li><p><a href="table.html" target="rightframe">Marksheet Table</a></p></li>
+    </ol>
+    </body>
+</html>
+
+Home.html
+<html>
+	<head><title>Home page</title>
+    <style type="text/css">
+        h1{ color: red; font-size: 54pt; font-family: bookmanold; }
+    </style>
+    </head>
+	<body background="img/grt.jpg"><center>
+    <h1>GRTIET</h1>
+        </center>
+    </body>
+</html>
+
+Form.html
+<html>
+	<head><title>Student Registration Form</title>
+	<style type="text/css">
+    td{ color:aqua; font-size: 15pt }
+    .a{ color:red;  font-size: 32pt  }
+    .b{ color:blue; font-size: 15pt }
+ </style>
+</head>
+<body><form >
+<table align="center" background="img/html.jpg" width="80%" height="100%" ><tr>
+<td colspan="2">
+    <h1 align="center" class="a">E-Mail</h1></td></tr><tr>
+    <td colspan="2"><h2 align="center" class="a">Signup Form</h2></td></tr>
+    <tr><td> First Name:</td>
+        <td><input type="text" placeholder="First Name" size="15"></td></tr>
+    <tr><td>Last Name:</td>
+        <td><input type="text" placeholder="Last Name" size="15"></td></tr>
+	<tr><td> User Name:</td>
+        <td><input type="email" placeholder="User Name" size="15"><i class="b">@gmail.com</i></td></tr>
+	<tr><td>Password :</td>
+        <td><input type="password" placeholder="Enter Password" size="15"><b class="b">(min 6 characters)</b></td></tr>
+    <tr><td>Confirm Password:</td>
+        <td><input type="password" placeholder="Confirm Password" size="15"></td></tr>
+    <tr><td>Phone Number:</td>
+        <td><input type="tel" placeholder="Enter Phone Number" size="15"></td></tr>
+    <tr><td>Gender: </td>
+        <td class="b"><input type="radio" name="gen" value="male">Male
+        <input type="radio" name="gen" value="female">Female</td></tr>
+    <tr><td>Language Known:</td><td class="b">
+        <input type="checkbox" name="lang" value="tamil">Tamil<br/>
+        <input type="checkbox" name="lang" value="english">English<br/>		
+        <input type="checkbox" name="lang" value="hindi">Hindi<br/>
+        </td></tr>
+    <tr><td>Alternate Email ID:</td>
+        <td><input type="email" placeholder="Alternate Email Id" size="20"></td></tr>
+    <tr><td colspan="2"><p align="center" class="b">
+        <input type="checkbox" name="agree" value="agree">I agree the terms and conditions</p></td></tr>
+    <tr align="center"><td colspan="2"><input type="submit" value="Submit"></td></tr>
+    </table></form>
+</body>
+</html>
+
+Javaquize.html
+<html>
+<head>
+    <style type="text/css">
+        h1{ font-family: bookmanold; color: red; font-size: 20px }
+    </style>
+<script type="text/javascript">
+var c = 0;
+var t;
+var timer_is_on=0;
+function timedCount()
+	{ 
+	if(c <= 60)
+		{
+		document.getElementById('txt').value=c;
+		c = c+1;
+		t = setTimeout("timedCount()",500); }
+	else
+		{ alert("Timed Out");
+			timer_is_on=0; }
+	}
+	function doTimer()
+		{
+		if(!timer_is_on)
+			{	
+			c = 0;
+			timer_is_on = 1;
+			timedCount(); }
+		}
+		function validateQuiz()
+			{
+			var count=0;
+			if(document.f.a1.value=="h1")
+				{
+				count = count*1 + 1; }
+			if(document.f.a2.value=='h3')
+				{
+				count = count*1 + 1; }
+			if(document.f.a3.value=='h1')
+				{
+				count = count*1 + 1; }
+			if(document.f.a4.value=='h2')
+				{
+				count = count*1 + 1; }
+			if(document.f.a5.value=='h1')
+				{
+				count = count*1 + 1; 
+				}
+				alert("you have answered "+count+" question(s) correctly");
+				return true;
+			}
+		</script>
+	</head>
+<body>
+<form name="f" onsubmit="return validateQuiz();">
+    <center>
+        <input type="button" value="Start Quiz" onclick="doTimer()"/>
+        <input readonly type="text" id = "txt" onfocus="this.blur();" size="1"></center>
+    <h1>1. What does HTML stand for?</h1>
+<input type="radio" name="a1" value="h1">Hper Text Markup Language<br>
+<input type="radio" name="a1" value="h2">Home Tool Markup Language<br>
+<input type="radio" name="a1" value="h3">Hyperlinks and Text Markup Language<br>
+
+<h1>2. How do you insert COMMENTS in Java code?</h1>
+  <input type="radio" name="a2" value="h1">/* This is a comment */<br>  
+  <input type="radio" name="a2" value="h2"># This is a comment <br>  
+  <input type="radio" name="a2" value="h3">// This is a comment <br>  
+    
+<h1>3. Java is short for "JavaScript".</h1>
+    <input type="radio" name="a3" value="h1">True<br>  
+    <input type="radio" name="a3" value="h2">False<br>  
+    
+<h1>4. Which operator is used to add together two values?</h1>
+    <input type="radio" name="a4" value="h1">The * sign<br>  
+    <input type="radio" name="a4" value="h2">The & sign<br>  
+    <input type="radio" name="a4" value="h3">The + sign<br>  
+	
+<h1>5. How do you write "Hello World" in an alert box?</h1>
+    <input type="radio" name="a5" value="h1">alert("Hello World");<br>
+    <input type="radio" name="a5" value="h2">msgBox("Hello World");<br>
+    <input type="radio" name="a5" value="h3">alertBox("Hello World");<br>
+<br><center>
+    <input type="submit" value="Submit"/></center>
+		</form>
+	</body>
+</html>
+
+Image map.html
+<html>
+<head><title>Image map</title></head>
+<body>
+    <h1><b>clik any one South state</b></h1>
+    <img src="img/INDIA.png" alt="there is no image" usemap="#map1">
+    <map name="map1">
+    <area shape="rect" coords="128,407,153,425" alt="This tamil nadu state not display" href="img/Tamilnadu.gif">
+	<area shape="rect" coords="110,417,119,431" alt="This kerala state not display" href="img/kerala.gif">
+    <area shape="rect" coords="91,348,120,376" alt="This karanataka state not display" href="img/Karnataka.jpg">
+    <area shape="rect" coords="143,316,185,342" alt="This andhra state not display" href="img/andhra.jpg">
+    </map>  
+    </body>
+</html>
+
+Table.html
+<html>
+<head><title>Table page</title>
+    <style type="text/css">
+    td{ color:white; font-size: 15pt; text-align: center }
+    th{ color:red;  font-size: 18pt  }
+ </style>
+    </head>
+    <body bgcolor="fffaaa" align="center" ><font color="blue" size="7"><u>Mark Sheet</u></font></body>
+    <br><br><br><br><br><br>
+    <table background="img/back.jpg" border="10" align="center" height="50%" width="30%">
+        <tr><th>S.NO</th>
+            <th>SUBJECT NAME</th>
+            <th>GRADE</th></tr>
+        <tr><td>1.</td> <td>TOC</td> <td>A+</td></tr>  
+        <tr><td>2.</td> <td>CN</td> <td>O</td></tr>
+        <tr><td>3.</td> <td>MPMC</td><td>B+</td></tr>
+        <tr><td>4.</td> <td>ANT</td> <td>B</td></tr>
+        <tr><td>5.</td> <td>WCM</td> <td>O</td></tr>
+        <tr><td>6.</td> <td>SE</td> <td>A+</td></tr>
+        </table><br>   
+</html>
